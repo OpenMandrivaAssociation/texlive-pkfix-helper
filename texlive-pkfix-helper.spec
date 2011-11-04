@@ -1,3 +1,9 @@
+# revision 22981
+# category Package
+# catalog-ctan /support/pkfix-helper
+# catalog-date 2011-06-13 21:57:04 +0200
+# catalog-license lppl
+# catalog-version 1.4
 Name:		texlive-pkfix-helper
 Version:	1.4
 Release:	1
@@ -53,6 +59,7 @@ verify and, if needed, correct its decisions.
 %doc %{_texmfdistdir}/doc/support/pkfix-helper/encoding-samples.tex
 %doc %{_mandir}/man1/pkfix-helper.1*
 %doc %{_texmfdir}/doc/man/man1/pkfix-helper.man1.pdf
+%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -69,3 +76,5 @@ mkdir -p %{buildroot}%{_datadir}
 cp -fpar texmf texmf-dist %{buildroot}%{_datadir}
 mkdir -p %{buildroot}%{_mandir}/man1
 mv %{buildroot}%{_texmfdir}/doc/man/man1/*.1 %{buildroot}%{_mandir}/man1
+mkdir -p %{buildroot}%{_tlpkgobjdir}
+cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
