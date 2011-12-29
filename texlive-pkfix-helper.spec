@@ -18,8 +18,6 @@ BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
 Requires(post):	texlive-kpathsea
 Provides:	texlive-pkfix-helper.bin = %{EVRD}
-Conflicts:	texlive-texmf <= 20110705-3
-Conflicts:	texlive-doc <= 20110705-3
 
 %description
 Pkfix is a useful utility for replacing resolution-dependent
@@ -35,20 +33,12 @@ processing by pkfix. pkfix-helper can sometimes process
 documents fully autonomously but does require the user to
 verify and, if needed, correct its decisions.
 
-%pre
-    %_texmf_mktexlsr_pre
-
 %post
-    %_texmf_mktexlsr_post
-
-%preun
-    if [ $1 -eq 0 ]; then
-	%_texmf_mktexlsr_pre
-    fi
+    %{_sbindir}/texlive.post
 
 %postun
     if [ $1 -eq 0 ]; then
-	%_texmf_mktexlsr_post
+	%{_sbindir}/texlive.post
     fi
 
 #-----------------------------------------------------------------------
@@ -60,7 +50,6 @@ verify and, if needed, correct its decisions.
 %doc %{_texmfdistdir}/doc/support/pkfix-helper/encoding-samples.tex
 %doc %{_mandir}/man1/pkfix-helper.1*
 %doc %{_texmfdir}/doc/man/man1/pkfix-helper.man1.pdf
-%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -77,5 +66,3 @@ mkdir -p %{buildroot}%{_datadir}
 cp -fpar texmf texmf-dist %{buildroot}%{_datadir}
 mkdir -p %{buildroot}%{_mandir}/man1
 mv %{buildroot}%{_texmfdir}/doc/man/man1/*.1 %{buildroot}%{_mandir}/man1
-mkdir -p %{buildroot}%{_tlpkgobjdir}
-cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
