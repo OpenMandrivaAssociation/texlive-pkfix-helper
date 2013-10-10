@@ -1,12 +1,12 @@
-# revision 22981
+# revision 29725
 # category Package
 # catalog-ctan /support/pkfix-helper
-# catalog-date 2011-06-13 21:57:04 +0200
+# catalog-date 2012-06-08 16:04:26 +0200
 # catalog-license lppl
 # catalog-version 1.4
 Name:		texlive-pkfix-helper
 Version:	1.4
-Release:	2
+Release:	3
 Summary:	Make PostScript files accessible to pkfix
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/support/pkfix-helper
@@ -45,11 +45,11 @@ verify and, if needed, correct its decisions.
 %files
 %{_bindir}/pkfix-helper
 %{_texmfdistdir}/scripts/pkfix-helper/pkfix-helper
+%doc %{_mandir}/man1/pkfix-helper.1*
+%doc %{_texmfdistdir}/doc/man/man1/pkfix-helper.man1.pdf
 %doc %{_texmfdistdir}/doc/support/pkfix-helper/README
 %doc %{_texmfdistdir}/doc/support/pkfix-helper/encoding-samples.pdf
 %doc %{_texmfdistdir}/doc/support/pkfix-helper/encoding-samples.tex
-%doc %{_mandir}/man1/pkfix-helper.1*
-%doc %{_texmfdir}/doc/man/man1/pkfix-helper.man1.pdf
 
 #-----------------------------------------------------------------------
 %prep
@@ -63,20 +63,6 @@ pushd %{buildroot}%{_bindir}
     ln -sf %{_texmfdistdir}/scripts/pkfix-helper/pkfix-helper pkfix-helper
 popd
 mkdir -p %{buildroot}%{_datadir}
-cp -fpar texmf texmf-dist %{buildroot}%{_datadir}
+cp -fpar texmf-dist %{buildroot}%{_datadir}
 mkdir -p %{buildroot}%{_mandir}/man1
-mv %{buildroot}%{_texmfdir}/doc/man/man1/*.1 %{buildroot}%{_mandir}/man1
-
-
-%changelog
-* Wed Jan 04 2012 Paulo Andrade <pcpa@mandriva.com.br> 1.4-2
-+ Revision: 754937
-- Rebuild to reduce used resources
-
-* Sat Nov 05 2011 Paulo Andrade <pcpa@mandriva.com.br> 1.4-1
-+ Revision: 719266
-- texlive-pkfix-helper
-- texlive-pkfix-helper
-- texlive-pkfix-helper
-- texlive-pkfix-helper
-
+mv %{buildroot}%{_texmfdistdir}/doc/man/man1/*.1 %{buildroot}%{_mandir}/man1
