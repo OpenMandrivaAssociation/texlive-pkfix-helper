@@ -6,7 +6,7 @@
 # catalog-version 1.4
 Name:		texlive-pkfix-helper
 Version:	1.4
-Release:	2
+Release:	3
 Summary:	Make PostScript files accessible to pkfix
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/support/pkfix-helper
