@@ -1,6 +1,6 @@
 Name:		texlive-pkfix-helper
 Version:	56061
-Release:	1
+Release:	2
 Summary:	Make PostScript files accessible to pkfix
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/support/pkfix-helper
