@@ -3,7 +3,7 @@ Version:	56061
 Release:	2
 Summary:	Make PostScript files accessible to pkfix
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/support/pkfix-helper
+URL:		https://www.ctan.org/tex-archive/support/pkfix-helper
 License:	LPPL
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/pkfix-helper.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/pkfix-helper.doc.r%{version}.tar.xz
