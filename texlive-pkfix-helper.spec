@@ -1,5 +1,6 @@
 %global tl_name pkfix-helper
 %global tl_revision 56061
+%global tl_bin_links pkfix-helper:%{_texmfdistdir}/scripts/pkfix-helper/pkfix-helper
 
 Name:		texlive-%{tl_name}
 Epoch:		1
@@ -15,6 +16,8 @@ BuildArch:	noarch
 BuildSystem:	texlive
 Requires:	texlive(pkfix-helper.bin)
 Provides:	texlive(%{tl_name}) = %{tl_revision}
+Provides:	texlive(%{tl_name}.bin) = %{tl_revision}
+Provides:	texlive-%{tl_name}.bin = %{EVRD}
 
 %description
 Pkfix is a useful utility for replacing resolution-dependent bitmapped
